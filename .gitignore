@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+
+.vscode/
+.idea/
+
+*.zip
+
+shopnest-frontend/node_modules/
+shopnest-frontend/dist/
+
+shopnest-backend/target/
+
+.env
+.env.*

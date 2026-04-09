@@ -1,0 +1,147 @@
+.carouselContainer {
+  width: 100%;
+  max-width: 1380px;
+  margin: 22px auto 10px;
+  padding: 0 18px;
+  overflow: hidden;
+  position: relative;
+}
+
+.slide {
+  min-height: 460px;
+  display: grid;
+  grid-template-columns: minmax(260px, 0.95fr) minmax(320px, 1.15fr);
+  align-items: center;
+  gap: 24px;
+  padding: 34px;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.92), transparent 34%),
+    linear-gradient(135deg, #f8fafc 0%, #e2e8f0 52%, #cbd5e1 100%);
+  box-shadow: 0 20px 50px rgba(15, 23, 42, 0.16);
+}
+
+.copy {
+  max-width: 430px;
+  padding: 10px 4px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(37, 99, 235, 0.12);
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 18px 0 12px;
+  color: #0f172a;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1.02;
+  font-weight: 800;
+}
+
+.subtitle {
+  margin: 0;
+  color: #334155;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.imageShell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 390px;
+  padding: 14px;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.35));
+  backdrop-filter: blur(8px);
+}
+
+.carouselImage {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.18);
+}
+
+.alice-carousel__dots {
+  margin-top: 16px;
+}
+
+.alice-carousel__dots-item {
+  width: 34px;
+  height: 6px;
+  background-color: #cbd5e1;
+  border-radius: 999px;
+}
+
+.alice-carousel__dots-item.__active {
+  background-color: #2563eb;
+}
+
+.alice-carousel__prev-btn,
+.alice-carousel__next-btn {
+  display: none;
+}
+
+@media (max-width: 920px) {
+  .slide {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .copy {
+    max-width: none;
+  }
+
+  .imageShell {
+    min-height: 280px;
+  }
+
+  .carouselImage {
+    height: 280px;
+  }
+}
+
+@media (max-width: 640px) {
+  .carouselContainer {
+    margin-top: 16px;
+    padding: 0 12px;
+  }
+
+  .slide {
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .title {
+    margin-top: 14px;
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .imageShell {
+    min-height: 220px;
+    padding: 10px;
+  }
+
+  .carouselImage {
+    height: 220px;
+    border-radius: 14px;
+  }
+}

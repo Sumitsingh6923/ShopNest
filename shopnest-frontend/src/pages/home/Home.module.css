@@ -1,0 +1,19 @@
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 20px;
+  padding: 30px;
+  background: #f3f3f3;
+}
+
+@media (max-width: 1000px) {
+  .productGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .productGrid {
+    grid-template-columns: 1fr;
+  }
+}

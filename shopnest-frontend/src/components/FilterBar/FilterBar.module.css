@@ -1,0 +1,88 @@
+.filterBar {
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filterLeft {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filterRight {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Select dropdown */
+.select {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  cursor: pointer;
+  background-color: white;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Search input */
+.searchInput {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  width: 220px;
+  font-size: 14px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+/* Filter button */
+.filterButton {
+  padding: 8px 16px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.filterButton:hover {
+  background-color: #1d4ed8;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .filterBar {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .filterLeft,
+  .filterRight {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .searchInput {
+    width: 100%;
+  }
+}

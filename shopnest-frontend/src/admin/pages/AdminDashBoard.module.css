@@ -1,0 +1,46 @@
+.dashboard{
+  padding:40px;
+  background:#f4f6f8;
+  min-height:100vh;
+}
+
+.title{
+  font-size:28px;
+  font-weight:600;
+  margin-bottom:30px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:white;
+  padding:25px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  text-align:center;
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+.card p{
+  font-size:22px;
+  font-weight:bold;
+  color:#1e88e5;
+}
+
+.button{
+  display:inline-block;
+  padding:10px 20px;
+  background:#1e88e5;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+  transition:background  0.3s ease;
+}

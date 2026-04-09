@@ -1,0 +1,35 @@
+.categoryMenu {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 10px 0;
+}
+
+.categoryContainer {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.categoryItem {
+  text-decoration: none;
+  color: #1f2937;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 10px;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.categoryItem:hover {
+  background-color: #f1f5f9;
+  color: #2563eb;
+}
+
+.activeCategory {
+  background-color: #2563eb;
+  color: white;
+}
