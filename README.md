@@ -42,7 +42,27 @@ flowchart LR
 
 ## Screenshots
 
-Add screenshots of the home page, product list, cart, checkout, and admin dashboard in a `screenshots/` folder, then link them here.
+### User Pages
+
+#### Home Page
+![ShopNest home page](screenshots/home-page.png)
+
+#### Cart Page
+![ShopNest cart page](screenshots/cart-page.png)
+
+#### Checkout Page
+![ShopNest checkout page](screenshots/checkout-page.png)
+
+### Admin Pages
+
+#### Admin Dashboard
+![ShopNest admin dashboard](screenshots/admin-dashboard.png)
+
+#### Manage Products
+![ShopNest manage products page](screenshots/manage-products.png)
+
+#### Add Product
+![ShopNest add product page](screenshots/add-product.png)
 
 ## API Overview
 
