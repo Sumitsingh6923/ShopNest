@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AdminLayout from "../components/AdminLayout";
-import api from "../../Api/axiosConfig";
+import api from "../../api/axiosConfig";
 import Styles from "../styles/Admin.module.css";
 
 const ManageProducts = () => {
