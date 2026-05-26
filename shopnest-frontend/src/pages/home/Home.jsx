@@ -11,7 +11,7 @@ import Styles from "./Home.module.css";
 import {
   getProducts,
   getProductsByCategory,
-} from "../../services/productService";
+} from "../../Services/productService";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
@@ -52,7 +52,8 @@ const Home = () => {
 
   const normalizedProducts = Array.isArray(products) ? products : [];
 
-  const visibleProducts = [...normalizedProducts].sort((firstProduct, secondProduct) => {
+  const visibleProducts = [...normalizedProducts].sort(
+    (firstProduct, secondProduct) => {
       if (sortOrder === "priceLow") {
         return firstProduct.discountedPrice - secondProduct.discountedPrice;
       }
@@ -62,7 +63,8 @@ const Home = () => {
       }
 
       return 0;
-    });
+    },
+  );
 
   return (
     <>
