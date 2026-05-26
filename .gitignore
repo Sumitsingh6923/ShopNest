@@ -6,6 +6,9 @@ Thumbs.db
 
 *.zip
 
+node_modules/
+target/
+
 shopnest-frontend/node_modules/
 shopnest-frontend/dist/
 

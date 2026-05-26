@@ -98,36 +98,22 @@ color:#94a3b8;
 }
 
 .navArea{
-display:flex;
-align-items:center;
 gap:14px;
 }
 
-.navLinks{
-display:flex;
-align-items:center;
-gap:10px;
-flex-wrap:wrap;
-}
-
 .navPill{
-display:inline-flex;
-align-items:center;
-gap:8px;
-padding:10px 14px;
-border-radius:14px;
 background:rgba(255,255,255,0.06);
 border:1px solid rgba(148,163,184,0.16);
-color:#e2e8f0;
-text-decoration:none;
+color:#e2e8f0 !important;
 font-size:14px;
 font-weight:600;
 transition:transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+text-decoration:none;
 }
 
 .navPill:hover{
 background:rgba(255,184,77,0.14);
-color:#fff7ed;
+color:#fff7ed !important;
 transform:translateY(-1px);
 }
 
@@ -165,7 +151,7 @@ text-decoration:none;
 font-size:14px;
 font-weight:800;
 cursor:pointer;
-transition:transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+transition:transform 0.2s ease, box-shadow 0.2s ease;
 box-shadow:0 12px 22px rgba(249,115,22,0.24);
 }
 
@@ -239,12 +225,6 @@ align-items:stretch;
 margin-left:0;
 }
 
-.navLinks{
-width:100%;
-justify-content:flex-start;
-gap:10px;
-}
-
 .authArea{
 width:100%;
 justify-content:space-between;
@@ -265,15 +245,6 @@ height:32px;
 
 .logoText{
 font-size:18px;
-}
-
-.navLinks{
-display:grid;
-grid-template-columns:repeat(2, minmax(0, 1fr));
-}
-
-.navPill{
-justify-content:center;
 }
 
 .authArea{

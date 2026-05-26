@@ -11,7 +11,9 @@ const ProductCard = ({ product }) => {
   );
 
   const addToCart = async (productId) => {
-    const resultAction = await dispatch(addCartItem({ productId, quantity: 1 }));
+    const resultAction = await dispatch(
+      addCartItem({ productId, quantity: 1 }),
+    );
 
     if (addCartItem.fulfilled.match(resultAction)) {
       alert("Added to cart");
@@ -50,19 +52,25 @@ const ProductCard = ({ product }) => {
   const buttonClassName = `${styles.cartBtn} ${cartItem ? styles.removeBtn : ""}`;
 
   return (
-    <div className={styles.card}>
+    <div className={`card h-100 border-0 ${styles.card}`}>
       <div className={styles.imageWrap}>
         <span className={styles.discountBadge}>{product.discount}% OFF</span>
+
         <img
           src={`http://localhost:8080${product.imageUrl}`}
           alt={product.name}
-          className={styles.image}
+          className={`img-fluid ${styles.image}`}
         />
       </div>
 
-      <div className={styles.body}>
-        <div className={styles.topRow}>
-          <p className={styles.category}>{product.category}</p>
+      <div className={`card-body d-flex flex-column ${styles.body}`}>
+        <div
+          className={`d-flex justify-content-between align-items-center gap-2 ${styles.topRow}`}
+        >
+          <p className={`text-uppercase fw-bold mb-0 ${styles.category}`}>
+            {product.category}
+          </p>
+
           <span
             className={`${styles.stockBadge} ${
               product.stock > 0 ? styles.inStock : styles.lowStock
@@ -72,16 +80,37 @@ const ProductCard = ({ product }) => {
           </span>
         </div>
 
-        <h4 className={styles.title}>{product.name}</h4>
+        {/* Product Title */}
 
-        <p className={styles.description}>{product.description}</p>
+        <h4 className={`card-title fw-bold mb-0 ${styles.title}`}>
+          {product.name}
+        </h4>
 
-        <div className={styles.priceBlock}>
-          <span className={styles.salePrice}>₹{product.discountedPrice}</span>
+        {/* Description  */}
+
+        <p className={`card-text mb-0 ${styles.description}`}>
+          {product.description}
+        </p>
+
+        {/* Price Section */}
+
+        <div
+          className={`d-flex align-items-baseline gap-2 ${styles.priceBlock}`}
+        >
+          <span className={`fw-bold ${styles.salePrice}`}>
+            ₹{product.discountedPrice}
+          </span>
+
           <span className={styles.original}>₹{product.price}</span>
         </div>
 
-        <p className={styles.stock}>Stock available: {product.stock}</p>
+        {/* Stock  */}
+
+        <p className={`mt-auto mb-0 ${styles.stock}`}>
+          Stock available: {product.stock}
+        </p>
+
+        {/* Button  */}
 
         <button
           className={buttonClassName}

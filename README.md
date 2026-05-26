@@ -30,6 +30,31 @@ ShopNest/
 └── shopnest-backend/
 ```
 
+## Architecture
+
+```mermaid
+flowchart LR
+    User[User Browser] --> Frontend[React + Vite Frontend]
+    Frontend --> API[Spring Boot REST API]
+    API --> DB[(MySQL Database)]
+    API --> Uploads[Product Image Uploads]
+```
+
+## Screenshots
+
+Add screenshots of the home page, product list, cart, checkout, and admin dashboard in a `screenshots/` folder, then link them here.
+
+## API Overview
+
+| Area | Endpoint | Purpose |
+| --- | --- | --- |
+| Auth | `/api/auth/**` | Register and login users |
+| Products | `/api/products/**` | Public product listing, detail, and search |
+| Cart | `/api/cart/**` | Add, remove, and view cart items |
+| Orders | `/api/orders/**` | Create orders and view order history |
+| Payment | `/payment/**` | Mock payment creation and success flow |
+| Admin | `/admin/**` | Manage products, users, and orders |
+
 ## Backend Setup
 
 Move into the backend folder:
@@ -110,6 +135,19 @@ Admin routes are protected by `ROLE_ADMIN`. To use the admin panel, log in with 
 - Product images are served by the backend from the `uploads/` folder.
 - The backend uses JWT tokens stored by the frontend for authenticated requests.
 - MySQL must be running before starting the backend.
+- Do not commit generated folders such as `node_modules/`, `target/`, `.idea/`, or build output.
+
+## Future Enhancements
+
+- Add real payment gateway integration.
+- Add product reviews and ratings.
+- Add deployment configuration for frontend and backend hosting.
+- Add automated frontend and backend test coverage.
+- Add order invoice generation.
+
+## Deployment
+
+Deployment is not configured yet. Add the live frontend and backend URLs here after hosting the project.
 
 ## GitHub
 

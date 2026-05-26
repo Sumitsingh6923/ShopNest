@@ -31,7 +31,6 @@ const AddProduct = () => {
     return "Failed to add product";
   };
 
-  // HANDLE INPUT CHANGE
   const handleChange = (e) => {
     const { name, value } = e.target;
 

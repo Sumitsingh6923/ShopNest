@@ -22,68 +22,89 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={Styles.navbar}>
-      <div className={Styles.brandArea}>
-        <Link to="/" className={Styles.logo}>
-          <span className={Styles.logoMark}>SN</span>
-          <span className={Styles.logoText}>
-            Shop<span className={Styles.logoAccent}>Nest</span>
+    <nav className={`navbar navbar-expand-lg sticky-top ${Styles.navbar}`}>
+      <div className="container-fluid px-0">
+        <div className={Styles.brandArea}>
+          <Link to="/" className={Styles.logo}>
+            <span className={Styles.logoMark}>SN</span>
+
+            <span className={Styles.logoText}>
+              Shop<span className={Styles.logoAccent}>Nest</span>
+            </span>
+          </Link>
+
+          <span className={Styles.tagline}>
+            Style-led shopping, everyday ease.
           </span>
-        </Link>
-        <span className={Styles.tagline}>Style-led shopping, everyday ease.</span>
-      </div>
-
-      <div className={Styles.searchShell}>
-        <i className={`bi bi-search ${Styles.searchIcon}`}></i>
-        <input
-          className={Styles.search}
-          type="text"
-          placeholder="Search products, brands, and styles"
-          value={search}
-          onKeyDown={handleSearch}
-          onChange={(e) => setSearch(e.target.value)}
-        />
-      </div>
-
-      <div className={Styles.navArea}>
-        <div className={Styles.navLinks}>
-          <Link to="/" className={Styles.navPill}>
-            <i className="bi bi-house-door"></i>
-            <span>Home</span>
-          </Link>
-
-          <Link to="/cart" className={Styles.navPill}>
-            <i className="bi bi-bag"></i>
-            <span>Cart</span>
-          </Link>
-
-          <Link to="/order" className={Styles.navPill}>
-            <i className="bi bi-box-seam"></i>
-            <span>Orders</span>
-          </Link>
-
-          {user?.role === "ROLE_ADMIN" && (
-            <Link to="/admin" className={Styles.navPill}>
-              <i className="bi bi-speedometer2"></i>
-              <span>Admin</span>
-            </Link>
-          )}
         </div>
 
-        <div className={Styles.authArea}>
-          {isAuthenticated && user?.name && (
-            <span className={Styles.userBadge}>{user.name}</span>
-          )}
+        <div className={Styles.searchShell}>
+          <i className={`bi bi-search ${Styles.searchIcon}`}></i>
 
-          {isAuthenticated ? (
-            <button className={Styles.authButton} onClick={handleLogout}>
-              Logout
-            </button>
-          ) : (
-            <Link to="/login" className={Styles.authButton}>
-              Login
+          <input
+            className={Styles.search}
+            type="text"
+            placeholder="Search products, brands, and styles"
+            value={search}
+            onKeyDown={handleSearch}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+        </div>
+
+        <div className={`d-flex align-items-center gap-3 ${Styles.navArea}`}>
+          <div
+            className={`d-flex flex-wrap align-items-center gap-2 ${Styles.navLinks}`}
+          >
+            <Link
+              to="/"
+              className={`nav-link px-3 py-2 rounded-pill d-flex align-items-center gap-2 ${Styles.navPill}`}
+            >
+              <i className="bi bi-house-door"></i>
+              <span>Home</span>
             </Link>
-          )}
+
+            <Link
+              to="/cart"
+              className={`nav-link px-3 py-2 rounded-pill d-flex align-items-center gap-2 ${Styles.navPill}`}
+            >
+              <i className="bi bi-bag"></i>
+              <span>Cart</span>
+            </Link>
+
+            <Link
+              to="/order"
+              className={`nav-link px-3 py-2 rounded-pill d-flex align-items-center gap-2 ${Styles.navPill}`}
+            >
+              <i className="bi bi-box-seam"></i>
+              <span>Orders</span>
+            </Link>
+
+            {user?.role === "ROLE_ADMIN" && (
+              <Link
+                to="/admin"
+                className={`nav-link px-3 py-2 rounded-pill d-flex align-items-center gap-2 ${Styles.navPill}`}
+              >
+                <i className="bi bi-speedometer2"></i>
+                <span>Admin</span>
+              </Link>
+            )}
+          </div>
+
+          <div className={Styles.authArea}>
+            {isAuthenticated && user?.name && (
+              <span className={Styles.userBadge}>{user.name}</span>
+            )}
+
+            {isAuthenticated ? (
+              <button className={Styles.authButton} onClick={handleLogout}>
+                Logout
+              </button>
+            ) : (
+              <Link to="/login" className={Styles.authButton}>
+                Login
+              </Link>
+            )}
+          </div>
         </div>
       </div>
     </nav>

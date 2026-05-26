@@ -46,7 +46,8 @@ public class SecurityConfig {
                                 "/api/cart/**",
                                 "/payment/**",
                                 "/api/orders/**",
-                                "/images/**"
+                                "/images/**",
+                                "/uploads/**"
                         ).permitAll()
 
                         // ADMIN APIs
