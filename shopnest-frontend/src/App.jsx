@@ -14,7 +14,7 @@ import Cart from "./pages/Cart/Cart";
 import UserOrder from "./pages/Order/UserOrder";
 import Checkout from "./pages/Checkout/Checkout";
 
-import AdminDashboard from "./admin/pages/AdminDashBoard";
+import AdminDashboard from "./admin/Pages/AdminDashboard";
 import EditProduct from "./admin/pages/EditProduct";
 import ManageProducts from "./admin/pages/ManageProducts";
 import AdminOrders from "./admin/pages/AdminOrders";
