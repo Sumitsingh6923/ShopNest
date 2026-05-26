@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import api from "../../api/axiosConfig";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCart } from "../../Store/cartSlice";
+import { fetchCart } from "../../store/cartSlice";
 import Navbar from "../../components/Navbar/Navbar";
 import Styles from "./Checkout.module.css";
 

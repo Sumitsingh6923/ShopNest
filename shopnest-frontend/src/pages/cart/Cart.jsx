@@ -7,7 +7,7 @@ import {
   fetchCart,
   removeCartItem,
   updateCartItemQuantity,
-} from "../../Store/cartSlice";
+} from "../../store/cartSlice";
 
 const Cart = () => {
   const navigate = useNavigate();

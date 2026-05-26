@@ -1,6 +1,6 @@
 import styles from "./ProductCard.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { addCartItem, removeCartItem } from "../../Store/cartSlice";
+import { addCartItem, removeCartItem } from "../../store/cartSlice";
 import { useNavigate } from "react-router-dom";
 
 const ProductCard = ({ product }) => {
