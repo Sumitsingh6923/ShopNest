@@ -7,12 +7,12 @@ import {
 } from "react-router-dom";
 import { useSelector } from "react-redux";
 
-import Home from "./pages/Home/Home";
-import Register from "./pages/Login/Register";
-import Login from "./pages/Login/Login";
-import Cart from "./pages/Cart/Cart";
-import UserOrder from "./pages/Order/UserOrder";
-import Checkout from "./pages/Checkout/Checkout";
+import Home from "./pages/home/Home";
+import Register from "./pages/login/Register";
+import Login from "./pages/login/Login";
+import Cart from "./pages/cart/Cart";
+import UserOrder from "./pages/order/UserOrder";
+import Checkout from "./pages/checkout/Checkout";
 
 import AdminDashboard from "./admin/pages/AdminDashBoard";
 import EditProduct from "./admin/pages/EditProduct";

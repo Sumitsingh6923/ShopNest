@@ -11,7 +11,7 @@ import Styles from "./Home.module.css";
 import {
   getProducts,
   getProductsByCategory,
-} from "../../Services/productService";
+} from "../../services/productService";
 
 const Home = () => {
   const [products, setProducts] = useState([]);
