@@ -1,6 +1,6 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { logoutUser } from "../../store/authSlice";
+import { logoutUser } from "../../Store/authSlice";
 import Styles from "../styles/Admin.module.css";
 
 const AdminSidebar = () => {

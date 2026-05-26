@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import api from "../../api/axiosConfig";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchCart } from "../../store/cartSlice";
+import { fetchCart } from "../../Store/cartSlice";
 import Navbar from "../../components/Navbar/Navbar";
 import Styles from "./Checkout.module.css";
 
@@ -74,7 +74,9 @@ const Checkout = () => {
             </div>
           </div>
 
-          {loading && <p className={Styles.infoText}>Loading checkout items...</p>}
+          {loading && (
+            <p className={Styles.infoText}>Loading checkout items...</p>
+          )}
           {error && <p className={Styles.errorText}>{error}</p>}
 
           {cart.length === 0 ? (
@@ -119,19 +121,27 @@ const Checkout = () => {
                                 <div className={Styles.metaRow}>
                                   <div className={Styles.priceStack}>
                                     <div className={Styles.priceGroup}>
-                                      <span className={Styles.priceLabel}>Original:</span>
-                                      <span className={Styles.originalPriceValue}>
+                                      <span className={Styles.priceLabel}>
+                                        Original:
+                                      </span>
+                                      <span
+                                        className={Styles.originalPriceValue}
+                                      >
                                         ₹ {originalPrice}
                                       </span>
                                     </div>
                                     <div className={Styles.priceGroup}>
-                                      <span className={Styles.priceLabel}>Discounted:</span>
+                                      <span className={Styles.priceLabel}>
+                                        Discounted:
+                                      </span>
                                       <span className={Styles.salePrice}>
                                         ₹ {discountedPrice}
                                       </span>
                                     </div>
                                     <div className={Styles.priceGroup}>
-                                      <span className={Styles.priceLabel}>Total:</span>
+                                      <span className={Styles.priceLabel}>
+                                        Total:
+                                      </span>
                                       <span className={Styles.lineTotal}>
                                         ₹ {lineTotal}
                                       </span>

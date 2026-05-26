@@ -7,7 +7,7 @@ import {
   fetchCart,
   removeCartItem,
   updateCartItemQuantity,
-} from "../../store/cartSlice";
+} from "../../Store/cartSlice";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -17,9 +17,7 @@ const Cart = () => {
     total,
     loading,
     error,
-  } = useSelector(
-    (state) => state.cart,
-  );
+  } = useSelector((state) => state.cart);
   const userId = useSelector((state) => state.auth.user?.id);
 
   useEffect(() => {
@@ -69,98 +67,103 @@ const Cart = () => {
           {cartItems.length === 0 ? (
             <div className={Styles.emptyState}>
               <h2>Your cart is empty</h2>
-              <p>Looks like you have not added anything yet. Start exploring products and fill it up.</p>
+              <p>
+                Looks like you have not added anything yet. Start exploring
+                products and fill it up.
+              </p>
             </div>
           ) : (
             <div className={Styles.cartLayout}>
               <div className={Styles.cartItems}>
-                {cartItems.map(
-                  (item) => {
-                    if (!item.product) {
-                      return null;
-                    }
+                {cartItems.map((item) => {
+                  if (!item.product) {
+                    return null;
+                  }
 
-                    const originalPrice = item.product.price;
-                    const discountedPrice =
-                      item.product.discountedPrice ?? item.product.price;
-                    const lineTotal = discountedPrice * item.quantity;
+                  const originalPrice = item.product.price;
+                  const discountedPrice =
+                    item.product.discountedPrice ?? item.product.price;
+                  const lineTotal = discountedPrice * item.quantity;
 
-                    return (
-                      <div key={item.id} className={Styles.cartItem}>
-                        <div className={Styles.imageWrap}>
-                          <img
-                            src={`http://localhost:8080${item.product.imageUrl}`}
-                            alt={item.product.name}
-                          />
+                  return (
+                    <div key={item.id} className={Styles.cartItem}>
+                      <div className={Styles.imageWrap}>
+                        <img
+                          src={`http://localhost:8080${item.product.imageUrl}`}
+                          alt={item.product.name}
+                        />
+                      </div>
+
+                      <div className={Styles.details}>
+                        <div className={Styles.productTop}>
+                          <div>
+                            <p className={Styles.category}>
+                              {item.product.category}
+                            </p>
+                            <h3>{item.product.name}</h3>
+                          </div>
+                          <button
+                            className={Styles.remove}
+                            onClick={() => removeItem(item.id)}
+                            aria-label={`Remove ${item.product.name} from cart`}
+                            title="Remove from cart"
+                          >
+                            <i className="bi bi-trash3"></i>
+                          </button>
                         </div>
 
-                        <div className={Styles.details}>
-                          <div className={Styles.productTop}>
-                            <div>
-                              <p className={Styles.category}>{item.product.category}</p>
-                              <h3>{item.product.name}</h3>
-                            </div>
-                            <button
-                              className={Styles.remove}
-                              onClick={() => removeItem(item.id)}
-                              aria-label={`Remove ${item.product.name} from cart`}
-                              title="Remove from cart"
-                            >
-                              <i className="bi bi-trash3"></i>
-                            </button>
+                        <p className={Styles.description}>
+                          {item.product.description}
+                        </p>
+
+                        <div className={Styles.metaRow}>
+                          <div className={Styles.priceGroup}>
+                            <span className={Styles.priceLabel}>Original:</span>
+                            <span className={Styles.originalPriceValue}>
+                              ₹ {originalPrice}
+                            </span>
                           </div>
 
-                          <p className={Styles.description}>
-                            {item.product.description}
-                          </p>
+                          <div className={Styles.priceGroup}>
+                            <span className={Styles.priceLabel}>
+                              Discounted:
+                            </span>
+                            <span className={Styles.salePrice}>
+                              ₹ {discountedPrice}
+                            </span>
+                          </div>
 
-                          <div className={Styles.metaRow}>
-                            <div className={Styles.priceGroup}>
-                              <span className={Styles.priceLabel}>Original:</span>
-                              <span className={Styles.originalPriceValue}>
-                                ₹ {originalPrice}
-                              </span>
-                            </div>
+                          <div className={Styles.priceGroup}>
+                            <span className={Styles.priceLabel}>Total:</span>
+                            <span className={Styles.lineTotal}>
+                              ₹ {lineTotal}
+                            </span>
+                          </div>
 
-                            <div className={Styles.priceGroup}>
-                              <span className={Styles.priceLabel}>Discounted:</span>
-                              <span className={Styles.salePrice}>
-                                ₹ {discountedPrice}
-                              </span>
-                            </div>
+                          <div className={Styles.quantity}>
+                            <button
+                              onClick={() =>
+                                updateQuantity(item.id, item.quantity - 1)
+                              }
+                            >
+                              -
+                            </button>
 
-                            <div className={Styles.priceGroup}>
-                              <span className={Styles.priceLabel}>Total:</span>
-                              <span className={Styles.lineTotal}>
-                                ₹ {lineTotal}
-                              </span>
-                            </div>
+                            <span>{item.quantity}</span>
 
-                            <div className={Styles.quantity}>
-                              <button
-                                onClick={() =>
-                                  updateQuantity(item.id, item.quantity - 1)
-                                }
-                              >
-                                -
-                              </button>
-
-                              <span>{item.quantity}</span>
-
-                              <button
-                                onClick={() =>
-                                  updateQuantity(item.id, item.quantity + 1)
-                                }
-                              >
-                                +
-                              </button>
-                            </div>
+                            <button
+                              onClick={() =>
+                                updateQuantity(item.id, item.quantity + 1)
+                              }
+                            >
+                              +
+                            </button>
                           </div>
                         </div>
                       </div>
-                    );
-                  },
-                )}
+                    </div>
+                  );
+                })}
               </div>
 
               <aside className={Styles.summaryCard}>

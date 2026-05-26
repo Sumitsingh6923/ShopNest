@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import AdminLayout from "../components/AdminLayout";
-import api from "../../api/axiosConfig";
+import api from "../../Api/axiosConfig";
 import Styles from "../styles/Admin.module.css";
 
 const ManageProducts = () => {
@@ -49,7 +49,9 @@ const ManageProducts = () => {
     <AdminLayout>
       <div className={Styles.pageHeader}>
         <h2>Manage Products</h2>
-        <p className={Styles.muted}>Review inventory and remove outdated listings.</p>
+        <p className={Styles.muted}>
+          Review inventory and remove outdated listings.
+        </p>
       </div>
 
       {error && <p className={Styles.error}>{error}</p>}
