@@ -165,9 +165,6 @@ Admin routes are protected by `ROLE_ADMIN`. To use the admin panel, log in with 
 - Add automated frontend and backend test coverage.
 - Add order invoice generation.
 
-## Deployment
-
-Deployment is not configured yet. Add the live frontend and backend URLs here after hosting the project.
 
 ## GitHub
 
